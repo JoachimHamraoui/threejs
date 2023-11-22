@@ -5,11 +5,9 @@ import ModelUploader from './components/ModelUploader';
 
 const App = () => {
   return (
-    <div className="App">
-      <div className='App-header'>
+    <div className="bg-black text-white fixed">
       <h1>Upload and Display 3D Models</h1>
       <ModelUploader />
-      </div>
     </div>
   );
 };
