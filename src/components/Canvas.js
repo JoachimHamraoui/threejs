@@ -1,7 +1,8 @@
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Sky, Stars } from "@react-three/drei";
+import GTLFLoadComp from './GTLFLoader';
 
-const CanvasComponent = () => {
+const CanvasComponent = (selectedModel) => {
     return (
 
         <div className="w-full h-screen fixed">
@@ -9,6 +10,8 @@ const CanvasComponent = () => {
           {/* Render the model */}
           {/* {confirmedModel && <primitive object={confirmedModel} />} */}
           {/* Add sky */}
+
+          {selectedModel && <GTLFLoadComp modelPath={selectedModel} />}
           <ambientLight intensity={0.8} />
         <directionalLight color="green" intensity={2} position={[20, 10, 20]} />
         <hemisphereLight args={[0x606060, 0x404040]} />
