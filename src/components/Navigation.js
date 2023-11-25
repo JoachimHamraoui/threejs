@@ -1,38 +1,21 @@
 // App.js
 // import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 
-function Navigation() {
+const Navigation = ({modelCollection}) => {
   return (
-    <Router>
-      <div>
-        <nav className='w-full bg-black p-8 fixed font-display text-md xl:flex flex-row sm:hidden text-white'>
+        <nav className='w-full bg-black p-8 font-display text-md flex-row text-white'>
           <ul className='w-1/3 flex'>
-            <li className='flex-auto flex items-center'>
-              <Link to="/" className='transition-text duration-300 hover:text-green'>Home</Link>
-            </li>
-            <li className='flex-auto flex items-center'>
-              <Link to="/web" className='transition-text duration-300 hover:text-green'>Web</Link>
-            </li>
-            <li className='flex-auto flex items-center'>
-              <Link to="/design" className='transition-text duration-300 hover:text-green'>Design</Link>
-            </li>
-            <li className='flex-auto flex items-center'>
+            {/* <li className='flex-auto flex items-center'>
               <Link to="/contact" className='transition-text duration-300 hover:text-green'>Contact</Link>
-            </li>
+            </li> */}
+            {modelCollection.map((model, modelIndex) => (
+              <li className='flex-auto flex items-center' key={modelIndex}>
+                <Link to="/contact" className='transition-text duration-300 hover:text-green'>{model.name}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
-
-        <Routes>
-          <Route path="/" />
-          <Route path="/web" />
-          <Route path="/web/project/:id" />
-          <Route path="/design" />
-          <Route path="/design/project/:id" />
-          <Route path="/contact" />
-        </Routes>
-      </div>
-    </Router>
   );
 }
 

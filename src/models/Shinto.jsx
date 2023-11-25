@@ -10,7 +10,7 @@ Title: Japanese Shinto Shrine
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
+export function Shinto(props) {
   const { nodes, materials } = useGLTF('/shinto.glb')
   return (
     <group {...props} dispose={null}>
@@ -26,4 +26,5 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/shinto.glb')
+useGLTF.preload('/shinto.glb');
+export default Shinto

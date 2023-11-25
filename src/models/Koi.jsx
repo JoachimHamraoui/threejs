@@ -10,7 +10,7 @@ Title: Koi Fish
 import React, { useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
-export function Model(props) {
+export function Koi(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/koi.glb')
   const { actions } = useAnimations(animations, group)
@@ -31,4 +31,5 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/koi.glb')
+useGLTF.preload('models/koi.glb');
+export default Koi;

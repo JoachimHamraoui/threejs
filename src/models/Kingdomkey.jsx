@@ -10,7 +10,7 @@ Title: Kingdom Key
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
+export function KingdomKey(props) {
   const { nodes, materials } = useGLTF('/kingdomkey.glb')
   return (
     <group {...props} dispose={null}>
@@ -31,4 +31,5 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/kingdomkey.glb')
+useGLTF.preload('models/kingdomkey.glb');
+export default KingdomKey

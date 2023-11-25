@@ -10,7 +10,7 @@ Title: Madara Uchiha (Uchiwa) - Non - edo tensei
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
+export function Madara(props) {
   const { nodes, materials } = useGLTF('/madara.glb')
   return (
     <group {...props} dispose={null}>
@@ -42,4 +42,5 @@ export function Model(props) {
   )
 }
 
-useGLTF.preload('/madara.glb')
+useGLTF.preload('models/madara.glb');
+export default Madara;
