@@ -28,10 +28,6 @@ const App = () => {
       path: <ShintoShrine />
     },
     {
-      name: "Manor",
-      path: <Manor />
-    },
-    {
       name: "Lamp",
       path: <Lamp />
     }
