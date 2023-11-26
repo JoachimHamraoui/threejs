@@ -7,23 +7,37 @@ Source: https://sketchfab.com/3d-models/round-lamp-b824fc4371b345298e48a5c98bbcd
 Title: Round Lamp
 */
 
-import React from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useState } from 'react'
+import { useGLTF, Html } from '@react-three/drei'
 
 export function Lamp(props) {
-  const { nodes, materials } = useGLTF('./models/lamp.glb')
+  const { nodes, materials } = useGLTF('./models/lamp.glb');
+  const [lights, setLights] = useState(false);
+
+  const toggleLights = () => {
+    setLights(!lights)
+  }
   return (
-    <group {...props} dispose={null}>
+    <>
+      <Html className="text">
+        <button onClick={toggleLights} className="bg-green text-xl px-8 text-white">
+          {lights ? "Lights off" : "Lights on"}
+        </button>
+      </Html>
+      <group {...props} dispose={null}>
       <group scale={0.01}>
         <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
           <mesh geometry={nodes.light_Material_0.geometry} material={materials.Material} />
           <mesh geometry={nodes.light_2002_0.geometry} material={materials['2.002']} />
-          <mesh geometry={nodes.light_light_0.geometry} material={materials.light} />
+          { lights && (
+            <mesh geometry={nodes.light_light_0.geometry} material={materials.light} />
+          )}
           <mesh geometry={nodes.light_1_0.geometry} material={materials.material} />
           <mesh geometry={nodes.light_2001_0.geometry} material={materials['2.001']} />
         </group>
       </group>
     </group>
+    </>
   )
 }
 
