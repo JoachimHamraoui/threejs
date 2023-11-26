@@ -7,12 +7,33 @@ Source: https://sketchfab.com/3d-models/kingdom-key-fe954b9181f04482b14575a0ed04
 Title: Kingdom Key
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, {useState} from 'react'
+import { useGLTF, Html } from '@react-three/drei'
 
 export function KingdomKey(props) {
-  const { nodes, materials } = useGLTF('./models/kingdomkey.glb')
+  const { nodes, materials } = useGLTF('./models/kingdomkey.glb');
+  const [changeColor, setChangeColor] = useState(false);
+
+  const toggleColor = () => {
+    if (changeColor) {
+      materials.yellow.color.set(0xff0000);
+      materials.blinn5.color.set(0xff0000);
+      materials.blinn6.color.set(0x000000);
+    } else {
+      materials.yellow.color.set(0x0000ff);
+      materials.blinn5.color.set(0x0000ff);
+      materials.blinn6.color.set(0xffffff);
+    }
+    setChangeColor(!changeColor)
+  } 
+
   return (
+    <>
+    <Html className="text">
+        <button onClick={toggleColor} className="bg-green text-xl px-12 py-2 text-white bottom-80 right-80 relative">
+          Keyblade color
+        </button>
+      </Html>
     <group {...props} dispose={null}>
       <group position={[0, -0.036, 0.036]} rotation={[-Math.PI, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
@@ -28,6 +49,7 @@ export function KingdomKey(props) {
         </group>
       </group>
     </group>
+    </>
   )
 }
 
