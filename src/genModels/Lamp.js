@@ -20,8 +20,8 @@ export function Lamp(props) {
   return (
     <>
       <Html className="text">
-        <button onClick={toggleLights} className="bg-green text-xl px-8 text-white">
-          {lights ? "Lights off" : "Lights on"}
+        <button onClick={toggleLights} className="bg-green text-xl px-12 py-2 text-white bottom-80 right-80 relative">
+          {lights ? "Off" : "On"}
         </button>
       </Html>
       <group {...props} dispose={null}>
