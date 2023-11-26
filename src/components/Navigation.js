@@ -1,4 +1,5 @@
 import React from 'react';
+import UploadLink from './UploadLink';
 const Navigation = ({modelCollection, loadModel}) => {
   return (
         <nav className='w-full bg-black p-8 font-display text-md flex-row text-white'>

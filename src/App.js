@@ -2,10 +2,11 @@ import './App.css';
 import Navigation from './components/Navigation';
 import CanvasComponent from './components/Canvas';
 import KingdomKey from './genModels/Kingdomkey';
-import Koi from './genModels/Koi';
 import Madara from './genModels/Madara';
 import ShintoShrine from './genModels/Shinto';
 import Manor from './genModels/Manor';
+import Lamp from './genModels/Lamp';
+import UploadLink from './components/UploadLink';
 
 import React, { useState } from 'react';
 
@@ -30,6 +31,10 @@ const App = () => {
     {
       name: "Manor",
       path: <Manor />
+    },
+    {
+      name: "Lamp",
+      path: <Lamp />
     }
   ]
 
