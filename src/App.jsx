@@ -1,12 +1,11 @@
 import './App.css';
-import Navigation from './components/Navigation';
 import CanvasComponent from './components/Canvas';
+import Navigation from './components/Navigation';
 import KingdomKey from './genModels/Kingdomkey';
-import Madara from './genModels/Madara';
-import ShintoShrine from './genModels/Shinto';
-import Manor from './genModels/Manor';
 import Lamp from './genModels/Lamp';
-import UploadLink from './components/UploadLink';
+import Madara from './genModels/Madara';
+import Manor from './genModels/Manor';
+import ShintoShrine from './genModels/Shinto';
 
 import React, { useState } from 'react';
 
@@ -45,12 +44,9 @@ const App = () => {
   }
 
   return (
-    <div>
-      <Navigation className='relative' modelCollection={modelCollection} loadModel={loadModel} />
-     <CanvasComponent selectedModel={selectedModel}
-        loadingError={loadingError}
-        setSelectedModel={setSelectedModel}
-        setLoadingError={setLoadingError} />
+      <div>
+        <Navigation className='relative' modelCollection={modelCollection} loadModel={loadModel} />
+      <CanvasComponent selectedModel={selectedModel} loadingError={loadingError} setSelectedModel={setSelectedModel} setLoadingError={setLoadingError} />
     </div>
   );
 };

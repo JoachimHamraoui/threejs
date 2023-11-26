@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/kingdom-key-fe954b9181f04482b14575a0ed04
 Title: Kingdom Key
 */
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function KingdomKey(props) {
