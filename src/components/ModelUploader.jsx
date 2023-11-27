@@ -60,6 +60,7 @@ const ModelViewer = () => {
           rayleigh={20}
           turbidity={200}
           mieCoefficient={0.01}
+          texture={nightSkyTexture}
         />}
          <Stars
           radius={50}
